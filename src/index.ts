@@ -3,6 +3,8 @@ import express from 'express'
 import cors from 'cors'
 import { createServer } from 'http'
 
+const port = process.env.PORT ?? 3000
+
 const app = express()
 const server = createServer(app)
 const io = new Server(server, {
@@ -70,6 +72,6 @@ function findMatch(socket: Socket) {
     
 }
 
-server.listen(3000, () => {
+server.listen(port, () => {
   console.log('server running at http://localhost:3000/')
 })
